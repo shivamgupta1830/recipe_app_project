@@ -1,0 +1,234 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+  color: rgb(17, 42, 70);
+
+  background: linear-gradient(90deg, rgb(210, 231, 231) 0%, rgb(175, 223, 223));
+}
+
+header nav {
+  /* background-color: rgb(17, 42, 70); */
+  background: linear-gradient(rgb(17, 42, 70), rgb(30, 38, 110));
+  color: rgb(230, 238, 247);
+
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header nav h1 {
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+header nav form {
+  display: flex;
+  justify-content: center;
+}
+form input[type="text"] {
+  margin-right: 10px;
+  flex-grow: 1;
+}
+
+form input[type="text"],
+button[type="submit"] {
+  border: none;
+  font-size: 18px;
+  padding: 5px;
+  border-radius: 4px;
+}
+button[type="submit"] {
+  background-color: rgb(230, 238, 247);
+  color: rgb(17, 42, 70);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+button:hover {
+  background-color: rgb(196, 221, 250);
+  color: rgb(8, 66, 133);
+}
+
+/* main-section */
+.recipe-container {
+  text-align: center;
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 40px;
+  width: 80%;
+  margin: 10px auto;
+  padding: 20px;
+  place-items: center;
+}
+
+.recipe {
+  background: linear-gradient(rgb(17, 42, 70), rgb(30, 38, 110));
+  /* background: rgb(17, 42, 70); */
+  color: rgb(230, 238, 247);
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+
+  gap: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 5px 5px 15px 1px rgba(0, 0, 0, 0.3),
+    -2px -2px 15px 1px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  height: 425px;
+  transition: transform 0.2s ease-in-out;
+}
+.recipe img {
+  border-radius: 5px;
+  height: 250px;
+}
+.recipe:hover {
+  transform: scale(1.02);
+}
+.recipe h3 {
+  font-size: 18px;
+  color: rgb(135, 189, 252);
+}
+.recipe p {
+  font-size: 14px;
+  color: rgb(230, 238, 247);
+}
+
+.recipe span {
+  font-weight: 700;
+}
+.recipe button {
+  font-size: 14px;
+  font-weight: 700;
+  padding: 10px;
+  margin-top: 200px;
+  border-radius: 5px;
+  background-color: rgb(135, 189, 252);
+  color: rgb(17, 42, 70);
+  border: none;
+  width: 50%;
+
+  margin: 5px auto;
+  transition: all 0.2s ease-in-out;
+}
+.recipe button:hover {
+  background-color: rgb(202, 222, 245);
+  transition: background-color 0.2s ease-in-out;
+  /* transform: scale(1.02); */
+
+  cursor: pointer;
+}
+
+.recpie-details {
+  display: none;
+  position: fixed;
+
+  font-size: 18px;
+  text-align: center;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(rgb(17, 42, 70), rgb(30, 38, 110));
+  border-radius: 10px;
+  width: 40%;
+  height: 80%;
+  padding-block: 10px;
+
+  border: solid 2px rgb(202, 222, 245);
+  color: rgb(202, 222, 245);
+  -webkit-transform: translate(-50%, -50%);
+  transition: all 0.5s ease-in-out;
+  overflow-y: scroll;
+}
+
+.recpie-details h2 {
+  margin-bottom: 15px;
+  font-size: 22px;
+  text-decoration: underline 2px;
+  text-underline-offset: 5px;
+}
+.recpie-details h3 {
+  line-height: 20px;
+  font-size: 18px;
+}
+.recpie-details ul li {
+  font-size: 14px;
+  margin-block: 10px;
+  list-style: inside;
+}
+
+.instructions {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.recpieInstructions {
+  font-size: 13px;
+  padding: 0px 15px;
+  word-spacing: 2px;
+  line-height: 20px;
+  font-weight: 400;
+  white-space: pre-line;
+}
+
+/* adding scrollbar to popup */
+.recpie-details::-webkit-scrollbar {
+  width: 5px;
+  -webkit-width: 5px;
+}
+.recpie-details::-webkit-scrollbar-thumb {
+  background-color: rgb(202, 222, 245);
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+}
+.recipe-close-btn {
+  border: none;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+
+  padding: 1px;
+  border-radius: 10px;
+  background-color: rgb(230, 238, 247);
+  position: absolute;
+  right: 5px;
+  top: 10px;
+  transition: all 0.4s ease-in-out;
+}
+.recipe-close-btn:hover {
+  background-color: rgb(196, 221, 250);
+  color: rgb(8, 66, 133);
+  transform: scale(1.05);
+}
+
+body::-webkit-scrollbar {
+  width: 10px;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: rgb(81, 119, 163);
+}
+body::-webkit-scrollbar-track {
+  background-color: rgb(230, 238, 247);
+}
+
+/* RESPONSIVE CODE */
+
+@media screen and (max-width: 600px) {
+  header nav {
+    flex-direction: column;
+  }
+  header nav form {
+    width: 80%;
+    margin-top: 20px;
+  }
+}
